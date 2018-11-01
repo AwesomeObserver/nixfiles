@@ -4,12 +4,16 @@
   imports = [
     # Add hardware scan configuration.
     ./hardware-configuration.nix
-    # I3 WM
-    ./wm.nix
+    # X-Server
+    ./xserver.nix
     # Add packages.
     ./packages.nix
     # Add users.
     ./users.nix
+    ./intel.nix
+    ./nvidia.nix
+    ./bluetooth.nix
+    ./docker.nix
   ];
 
   # Boot block
