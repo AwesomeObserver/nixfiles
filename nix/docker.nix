@@ -9,10 +9,13 @@
       enableOnBoot = true;
     };
   };
-
-  environment.systemPackages = with pkgs;
-  [
-    docker
-    docker_compose
-  ];
+  
+  environment.systemPackages =
+    if config.virtualisation.docker.enable then with pkgs;
+      [
+        docker
+        docker_compose
+      ]
+    else
+      [ ];
 }
