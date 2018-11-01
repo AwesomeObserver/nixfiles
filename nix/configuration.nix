@@ -1,20 +1,23 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    # Add hardware scan configuration.
-    ./hardware-configuration.nix
-    # X-Server
-    ./xserver.nix
-    # Add packages.
-    ./packages.nix
-    # Add users.
-    ./users.nix
-    ./intel.nix
-    ./nvidia.nix
-    ./bluetooth.nix
-    ./docker.nix
-  ];
+  imports =
+    [
+      # Add hardware scan configuration.
+      ./hardware-configuration.nix
+      # X-Server
+      ./xserver.nix
+      # Add packages.
+      ./packages.nix
+      # Add users.
+      ./users.nix
+      ./zsh.nix
+      ./fonts.nix
+      ./intel.nix
+      ./nvidia.nix
+      ./bluetooth.nix
+      ./docker.nix
+    ];
 
   # Boot block
   boot.initrd.luks.devices = [
@@ -24,6 +27,10 @@
       preLVM = true;
     }
   ];
+  
+  nixpkgs.config = {
+    allowUnfree = true;
+  }; 
 
   time.timeZone = "Europe/Moscow";
 
