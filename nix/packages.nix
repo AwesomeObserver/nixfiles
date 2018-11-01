@@ -2,7 +2,8 @@
 
 { 
   # Packages
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+  [
     # Tools
     curl
     git
