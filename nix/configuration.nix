@@ -5,18 +5,22 @@
     [
       # Add hardware scan configuration.
       ./hardware-configuration.nix
-      # X-Server
-      ./xserver.nix
       # Add packages.
       ./packages.nix
+      # X-Server
+      ./modules/xserver.nix
       # Add users.
-      ./users.nix
-      ./zsh.nix
-      ./fonts.nix
-      ./intel.nix
-      ./nvidia.nix
-      ./bluetooth.nix
-      ./docker.nix
+      ./modules/users.nix
+      # Zsh shell conf
+      ./modules/zsh.nix
+      # Fonts
+      ./modules/fonts.nix
+      # Hardware stuff
+      ./modules/hardware/intel.nix
+      ./modules/hardware/nvidia.nix
+      ./modules/hardware/bluetooth.nix
+      # Docker
+      ./modules/docker.nix
     ];
 
   # Boot block
