@@ -31,7 +31,7 @@
         nrs = "nixos-rebuild switch";
         nsl = "nixos-rebuild switch --rollback";
         nv = "nixos-version";
-        code='nix-shell . --command "USE_NIXSHELL=1 exec zsh; return"';
+        code="nix-shell . --command "USE_NIXSHELL=1 exec zsh; return" ";
       };
 
       ohMyZsh = {
